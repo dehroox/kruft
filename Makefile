@@ -9,7 +9,7 @@ BASE_CFLAGS := -std=c23 -Wpedantic -fno-common \
                 -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations \
                 -Wshadow -Wundef -Wfloat-equal -Wcast-align -Wpointer-arith \
                 -Wwrite-strings -Wunused-parameter -Wpacked \
-                -Wpadded -Wredundant-decls -Wcast-qual \
+				-Wredundant-decls -Wcast-qual \
                 -Wconversion -Wswitch-default -Wswitch-enum \
 				$(shell pkgconf --cflags sdl3) $(shell pkgconf --libs sdl3)
 LDFLAGS :=
