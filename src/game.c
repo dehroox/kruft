@@ -1,6 +1,5 @@
 // gaming hell yeah
 
-
 #include "game.h"
 #include <stdio.h>
 
@@ -64,14 +63,18 @@ void game_handle_events(Game *game) {
 void game_update(Game *game) { (void)game; }
 
 void game_render(Game *game) {
-  SDL_SetRenderDrawColor(game->renderer, 0, 0, 0, 255);
-  SDL_RenderClear(game->renderer);
+#define RENDERER game->renderer
 
-  SDL_SetRenderDrawColor(game->renderer, 255, 255, 255, 255);
+  SDL_SetRenderDrawColor(RENDERER, 0, 0, 0, 255);
+  SDL_RenderClear(RENDERER);
+
+  SDL_SetRenderDrawColor(RENDERER, 255, 255, 255, 255);
   SDL_FRect rect = {100, 100, 50, 50};
-  SDL_RenderFillRect(game->renderer, &rect);
+  SDL_RenderFillRect(RENDERER, &rect);
 
-  SDL_RenderPresent(game->renderer);
+  SDL_RenderPresent(RENDERER);
+
+#undef RENDERER
 }
 
 void game_cleanup(Game *game) {
