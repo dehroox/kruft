@@ -72,11 +72,7 @@ void game_render(Game *game) {
 }
 
 void game_cleanup(Game *game) {
-  if (game->renderer) {
-    SDL_DestroyRenderer(game->renderer);
-  }
-  if (game->window) {
-    SDL_DestroyWindow(game->window);
-  }
+  SDL_DestroyRenderer(game->renderer);
+  SDL_DestroyWindow(game->window);
   SDL_Quit();
 }
