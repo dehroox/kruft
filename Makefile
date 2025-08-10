@@ -11,8 +11,8 @@ BASE_CFLAGS := -std=c23 -Wpedantic -fno-common \
                 -Wwrite-strings -Wunused-parameter -Wpacked \
 				-Wredundant-decls -Wcast-qual \
                 -Wconversion -Wswitch-default -Wswitch-enum \
-				$(shell pkgconf --cflags sdl3) $(shell pkgconf --libs sdl3)
-LDFLAGS :=
+				$(shell pkgconf --cflags sdl3)
+LDFLAGS := -lm $(shell pkgconf --libs sdl3)
 CPPFLAGS :=
 
 # Directories
